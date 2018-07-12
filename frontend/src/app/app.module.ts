@@ -11,6 +11,9 @@ import { PeliculaResumenComponent } from './pelicula/pelicula-resumen/pelicula-r
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgModule} from "@angular/core";
 import { PeliculaNoDisponibleComponent } from './pelicula/pelicula-no-disponible/pelicula-no-disponible.component';
+import { PerfilUsuarioComponent } from './tienda/perfil-usuario/perfil-usuario.component';
+import { DatosFacturaComponent } from './tienda/datos-factura/datos-factura.component';
+import { TiendaBuscadorComponent } from './tienda/tienda-buscador/tienda-buscador.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { PeliculaNoDisponibleComponent } from './pelicula/pelicula-no-disponible
     ActorResumenComponent,
     PeliculaDetalleComponent,
     PeliculaResumenComponent,
-    PeliculaNoDisponibleComponent
+    PeliculaNoDisponibleComponent,
+    PerfilUsuarioComponent,
+    DatosFacturaComponent,
+    TiendaBuscadorComponent
   ],
   imports: [
     BrowserModule,

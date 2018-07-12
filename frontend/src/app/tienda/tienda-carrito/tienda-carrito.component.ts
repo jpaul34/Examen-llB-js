@@ -12,4 +12,6 @@ export class TiendaCarritoComponent implements OnInit {
   ngOnInit() {
   }
 
+  cantidad=2;
+
 }
