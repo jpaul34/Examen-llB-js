@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Actor} from "../../home/home/home.component";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs/index";
 
 @Component({
   selector: 'app-actor-detalle',
@@ -7,18 +10,39 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActorDetalleComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  actor = [
+  // actores: Actor;
+  actores=[
     {
-      nombre: "actor1",
-      apellido: "actor1",
-      fechaNacimiento: "01/01/2018",
-      numeroPeliculas: 5,
-      retirado: true
+      "peliculas": [],
+      "createdAt": 1531502344673,
+      "updatedAt": 1531502344673,
+      "id": 2,
+      "nombre": "Will",
+      "apellido": "Smith",
+      "fechaNacimiento": "01/01/1979",
+      "numeroPeliculas": 6,
+      "retirado": false
     }
   ];
+  // urlActor = 'http://localhost:1337/actor';
+
+  constructor() {
+  }
+
+  ngOnInit() {
+    // this.getActores().subscribe(data => {
+    //     this.actores = data;
+    //     console.log('Actores ' + this.actores);
+    //   },
+    //   err => {
+    //     console.log(err)
+    //   }
+    // );
+  }
+
+  // getActores(): Observable<Actor> {
+  //   return this.http.get<Actor>(this.urlActor);
+  // }
+  //
+
 }

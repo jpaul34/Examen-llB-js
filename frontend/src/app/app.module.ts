@@ -14,6 +14,13 @@ import { PeliculaNoDisponibleComponent } from './pelicula/pelicula-no-disponible
 import { PerfilUsuarioComponent } from './tienda/perfil-usuario/perfil-usuario.component';
 import { DatosFacturaComponent } from './tienda/datos-factura/datos-factura.component';
 import { TiendaBuscadorComponent } from './tienda/tienda-buscador/tienda-buscador.component';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+import { HomeComponent } from './home/home/home.component';
+import { CookieService } from 'ngx-cookie-service';
+import {RouterModule} from "@angular/router";
+import {RUTAS_APP} from "./app.rutas";
+
 
 @NgModule({
   declarations: [
@@ -27,13 +34,20 @@ import { TiendaBuscadorComponent } from './tienda/tienda-buscador/tienda-buscado
     PeliculaNoDisponibleComponent,
     PerfilUsuarioComponent,
     DatosFacturaComponent,
-    TiendaBuscadorComponent
+    TiendaBuscadorComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,RouterModule.forRoot(
+      RUTAS_APP,
+      {
+        useHash: true
+      }
+    ),
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

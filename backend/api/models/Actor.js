@@ -16,6 +16,18 @@ module.exports = {
       type: 'string',
       required: true
     },
+    fechaNacimiento: {
+      type: 'string',
+      required: true
+    },
+    numeroPeliculas: {
+      type: 'number',
+      required: true
+    },
+    retirado: {
+      type: 'boolean',
+      required: true
+    },
     peliculas: {
       collection: 'pelicula',
       via: 'actorId'

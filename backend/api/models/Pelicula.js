@@ -16,8 +16,28 @@ module.exports = {
       type: 'string',
       required: true
     },
-    año: {
+    anioLanzamiento: {
       type: 'number',
+      required: true
+    },
+    rating: {
+      type: 'number',
+      required: true
+    },
+    genero: {
+      type: 'string',
+      required: true
+    },
+    duracion: {
+      type: 'string',
+      required: true
+    },
+    idioma: {
+      type: 'string',
+      required: true
+    },
+    costo: {
+      type: 'string',
       required: true
     },
     actorId: {
