@@ -9,7 +9,6 @@
 <!--<app-perfil-usuario></app-perfil-usuario>-->
 <!--<app-tienda-buscador></app-tienda-buscador>-->
 
-
 <div class="row">
   <div class="col-sm-9">
   </div>
@@ -55,7 +54,12 @@
     <div class="row">
       <div class="col-sm-4" style= "text-align: center;" *ngFor="let info of mensaje; let indice = index">
         <app-actor-resumen [actor]="info" ></app-actor-resumen>
+        {{registrarPeliculas(info.peliculas)}}
+        <!--{{imprimirObjeto(info.peliculas)}}-->
         <!--<div>{{info.nombre}}</div>-->
+    </div>
+
+      <!--{{imprimirPeli()}}-->
     </div>
   </div>
   <!--<div class="col-sm-8">-->
@@ -74,7 +78,7 @@
   <div class="col-sm-2">
   </div>
 </div>
-</div>
+
 
 <div class="row">
   <br>
@@ -104,31 +108,54 @@
 <div class="row" style="text-align: center">
   <div class="col-sm-12" >
     <br><br>
-    <button type="button" class="btn btn-light">Cargar más</button>
+    <button type="button" class="btn btn-light" (click)="imprimirPeli()">Cargar más</button>
     <br><br><br>
   </div>
 </div>
 
 
 <div class="row">
+
   <div class="col-sm-2">
   </div>
-  <div class="col-sm-8">
-    <div class="row">
-      <div class="col-sm-3" style= "text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
+
+  <div class="col-sm-8" >
+    <div class="row" >
+        <!--<div>{{info.pelicula}}</div>-->
+        <!--{{ info.peliculas.length}}-->
+        <!--<div class="segundo-bucle"  ">-->
+          <!--<div class="col-sm-3" style= "text-align: center;" *ngFor="let infop of mensaje.peliculas;">-->
+            <!--<app-pelicula-resumen  *ngIf="contador < 4" [peli]="infop"></app-pelicula-resumen>-->
+          <!--</div>-->
+          <!--{{aumentarCont()}}-->
+          <!--{{contador}}-->
+        <!--</div>-->
+      <!--</span>-->
+       <!--<div>{{info.nombre}}</div>-->
+      <div class="col-sm-3" style= "text-align: center;" *ngFor="let infop of arregloPeliculas;">
+        <app-pelicula-resumen  *ngIf="contador < 4" [peli]="infop"></app-pelicula-resumen>
       </div>
     </div>
   </div>
+
+
+  <!--<div class="col-sm-8">-->
+    <!--<div class="row">-->
+      <!--<div class="col-sm-3" style= "text-align: center;">-->
+        <!--<app-pelicula-resumen></app-pelicula-resumen>-->
+      <!--</div>-->
+      <!--<div class="col-sm-3" style="text-align: center;">-->
+        <!--<app-pelicula-resumen></app-pelicula-resumen>-->
+      <!--</div>-->
+      <!--<div class="col-sm-3" style="text-align: center;">-->
+        <!--<app-pelicula-resumen></app-pelicula-resumen>-->
+      <!--</div>-->
+      <!--<div class="col-sm-3" style="text-align: center;">-->
+        <!--<app-pelicula-resumen></app-pelicula-resumen>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
   <div class="col-sm-2">
   </div>
 </div>
@@ -175,159 +202,4 @@
   <br>
 </div>
 
-
-<div class="row">
-  <div class="col-sm-2">
-  </div>
-
-  <div class="col-sm-8">
-    <app-actor-detalle></app-actor-detalle>
-  </div>
-
-  <div class="col-sm-2">
-  </div>
-
-</div>
-
-<div class="row">
-  <br>
-</div>
-
-<div class="row">
-  <div class="col-sm-2">
-  </div>
-  <div class="col-sm-8">
-    <div class="row">
-      <div class="col-sm-3" style= "text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-2">
-  </div>
-</div>
-
-<div class="row">
-  <br>
-  <br>
-</div>
-
-<div class="row">
-  <div class="col-sm-2">
-  </div>
-  <div class="col-sm-8">
-    <div class="row">
-      <div class="col-sm-3" style= "text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-2">
-  </div>
-</div>
-
-<div class="row" style="text-align: center">
-  <div class="col-sm-12" >
-    <br><br>
-    <button type="button" class="btn btn-light">Cargar más</button>
-    <br><br><br>
-  </div>
-</div>
-
-<div class="row">
-  <br>
-  <br>
-</div>
-
-
-<div class="row">
-  <div class="col-sm-2">
-  </div>
-
-  <div class="col-sm-8">
-    <app-pelicula-detalle></app-pelicula-detalle>
-    <div class="col-sm-12" >
-      <br>
-      <button type="button" class="btn btn-light">Añadir al carrito</button>
-      <br><br>
-    </div>
-  </div>
-
-  <div class="col-sm-2">
-  </div>
-
-</div>
-
-<div class="row">
-  <br>
-</div>
-
-<div class="row">
-  <div class="col-sm-2">
-  </div>
-
-  <div class="col-sm-8">
-    <app-pelicula-no-disponible></app-pelicula-no-disponible>
-  </div>
-
-  <div class="col-sm-2">
-  </div>
-
-</div>
-
-
-<div class="row">
-  <br>
-  <br>
-</div>
-
-<div class="row">
-  <div class="col-sm-2">
-  </div>
-
-  <div class="col-sm-8">
-    <app-tienda-factura></app-tienda-factura>
-    <br>
-    <!--<span class="border border-dark">-->
-      <div class="row border">
-        <div class="col-sm-10"style="text-align: left;">
-          <app-pelicula-detalle></app-pelicula-detalle>
-        </div>
-        <div class="col-sm-2" style="padding-top: 40px; text-align: center" >
-            <br>
-            <button type="button" class="btn btn-light">Eliminar</button>
-            <br><br>
-        </div>
-      </div>
-    <!--</span>-->
-  </div>
-
-  <div class="col-sm-2">
-  </div>
-
-</div>
-
-<div class="row">
-  <br>
-  <br>
-</div>
-
-
+<router-outlet></router-outlet>

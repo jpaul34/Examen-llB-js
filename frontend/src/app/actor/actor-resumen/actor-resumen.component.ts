@@ -3,6 +3,7 @@ import {Actor} from "../../home/home/home.component";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/index";
 import {UsuarioService} from "../../servicios/usuario.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-actor-resumen',
@@ -27,7 +28,7 @@ export class ActorResumenComponent implements OnInit {
 
   //actor = this.actorAux;
 
-  constructor(private data: UsuarioService) { }
+  constructor(private data: UsuarioService, private router:Router) { }
 
 
   ngOnInit() {
@@ -62,6 +63,8 @@ export class ActorResumenComponent implements OnInit {
   //
   //
 
-
+  cambiarRuta(){
+    this.router.navigate(['/actor']);
+  }
 
 }

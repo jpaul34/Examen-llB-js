@@ -53,5 +53,6 @@ export interface Pelicula {
   genero: string,
   duracion: string,
   idioma: string,
+  costo: number,
   actorId: number;
 }

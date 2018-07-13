@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Actor} from "./home/home/home.component";
+import {Pelicula} from "./home/home/home.component";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/index";
 import {CookieService} from "ngx-cookie-service";
@@ -16,9 +16,10 @@ export class AppComponent implements OnInit {
   cookieValue = 'UNKNOWN';
 
   constructor( private http: HttpClient, private cookieService: CookieService, private data: UsuarioService ) { }
-
+  contador = 0;
   datosActor;
   mensaje;
+  arregloPeliculas = [];
   URLActores  = 'http://localhost:1337/actor';
 
   ngOnInit(): void {
@@ -37,7 +38,9 @@ export class AppComponent implements OnInit {
     // console.log(this.data);
   }
 
-
+  aumentarCont(){
+    this.contador= this.contador+1;
+  }
 
   //
   // actores: Actor;
@@ -61,5 +64,30 @@ export class AppComponent implements OnInit {
   //   return this.http.get<Actor>(this.urlActor);
   // }
 
+  registrarPeliculas(pelicula) {
+    // this.arregloPeliculas.push(
+    // {
+    //   "peliculaId": pelicula.peliculaId,
+    //   "nombre": pelicula.nombre,
+    //   "anioLanzamiento": pelicula.anioLanzamiento,
+    //   "rating": pelicula.rating,
+    //   "genero": pelicula.genero,
+    //   "duracion": pelicula.duracion,
+    //   "idioma": pelicula.idioma,
+    //   "costo": pelicula.costo,
+    //   "actorId": pelicula.actorId
+    //  });
 
+    this.arregloPeliculas.push(pelicula);
+    // console.log(this.arregloPeliculas);
+  }
+
+  imprimirPeli(){
+    console.log("Peliculas  ");
+    console.log(this.arregloPeliculas);
+  }
+
+  imprimirObjeto(pelicula){
+    console.log(pelicula);
+  }
 }

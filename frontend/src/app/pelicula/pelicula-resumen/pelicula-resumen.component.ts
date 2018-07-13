@@ -10,8 +10,9 @@ import {Observable} from "rxjs/index";
 })
 export class PeliculaResumenComponent implements OnInit {
 
-  @Input() pelicula;
-  peliculas=[
+  @Input() peli:Pelicula[];
+
+  peliculass=[
     {
       "peliculaId": 5,
       "nombre": "Pelicula 5",
@@ -37,6 +38,9 @@ export class PeliculaResumenComponent implements OnInit {
     //   //  this.detalles=this.autos.map(datos=>datos.nombres);
     // });
 
+  }
+  imprimirPeli(){
+    console.log(this.peli);
   }
 
   // getAutos(): Observable<Pelicula[]> {
