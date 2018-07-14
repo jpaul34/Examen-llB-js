@@ -79,7 +79,7 @@ export class AppComponent implements OnInit {
     console.log(pelicula);
     console.log("lista: ",lista);
     // lista+="]";
-    if(lista.){
+    if(lista.length>0){
       this.arregloPeliculas.push(lista);
     }
 
