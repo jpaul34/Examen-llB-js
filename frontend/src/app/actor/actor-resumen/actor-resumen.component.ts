@@ -28,7 +28,9 @@ export class ActorResumenComponent implements OnInit {
 
   //actor = this.actorAux;
 
-  constructor(private data: UsuarioService, private router:Router) { }
+  constructor(private data: UsuarioService,
+              private _usuarioService: UsuarioService,
+              private router:Router) { }
 
 
   ngOnInit() {
@@ -63,8 +65,13 @@ export class ActorResumenComponent implements OnInit {
   //
   //
 
+  seleccionar(indice){
+    this.router.navigate(['/actor']);
+    this._usuarioService.setIndice(indice);
+    return indice;
+  }
+
   cambiarRuta(){
     this.router.navigate(['/actor']);
   }
-
 }

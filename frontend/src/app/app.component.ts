@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/index";
 import {CookieService} from "ngx-cookie-service";
 import {UsuarioService} from "./servicios/usuario.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -11,16 +12,19 @@ import {UsuarioService} from "./servicios/usuario.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'app';
 
   cookieValue = 'UNKNOWN';
 
-  constructor( private http: HttpClient, private cookieService: CookieService, private data: UsuarioService ) { }
-  contador = 0;
-  datosActor;
-  mensaje;
-  arregloPeliculas = [];
+  constructor( private http: HttpClient,
+               private cookieService: CookieService,
+               private data: UsuarioService,
+               private _usuarioService: UsuarioService,
+               private router:Router) { }
   URLActores  = 'http://localhost:1337/actor';
+  mensaje;
+
+  contador = 0;
+  visible=true;
 
   ngOnInit(): void {
     this.cookieService.set( 'user', 'Jonathan' );
@@ -30,100 +34,27 @@ export class AppComponent implements OnInit {
     this.cookieValue = this.cookieService.get('user');
     console.log('valor cookie '+this.cookieValue);
 
-    this.http.get(this.URLActores).subscribe((data) => {
-      this.mensaje = data;
-      this.data.cambiarMensaje(this.mensaje);
-    });
-
-    // console.log(this.data);
+      this.escucharCambiosActor();
+//    }
   }
 
   aumentarCont(){
     this.contador= this.contador+1;
   }
 
-  //
-  // actores: Actor;
-  // urlActor = 'http://localhost:1337/actor';
-  //
-  // constructor(private http: HttpClient) {
-  // }
-  //
-  // ngOnInit() {
-  //   // this.getActores().subscribe(data => {
-  //   //     this.actores = data;
-  //   //     console.log('Actores ' + this.actores);
-  //   //   },
-  //   //   err => {
-  //   //     console.log(err)
-  //   //   }
-  //   // );
-  // }
-  //
-  // getActores(): Observable<Actor> {
-  //   return this.http.get<Actor>(this.urlActor);
-  // }
-  registrarPeliculas(pelicula){
-    let lista=[];
-    // lista+="[";
-    pelicula.forEach(function (valor, indice, arreglo) {
-      console.log('valor', valor);
-      console.log('indice', indice);
-      console.log('arreglo', arreglo);
-      if(valor!=null){
-        lista.push(valor);
-      }
+  seleccionar(indice){
+    const url = ['/pelicula'];
+    this.router.navigate(url);
+    this._usuarioService.setIndice(indice);
+    return indice;
+  }
 
+  escucharCambiosActor() {
+    this._usuarioService.emitircambioPelicula.subscribe((actor) => {
+      this.contador = actor;
     });
-    console.log("mensaje : ",this.mensaje);
-    console.log(pelicula);
-    console.log("lista: ",lista);
-    // lista+="]";
-    if(lista.length>0){
-      this.arregloPeliculas.push(lista);
-    }
-
-  }
-
-  agregarPeli(valor){
-    this.arregloPeliculas.push(valor);
   }
 
 
-  // registrarPeliculas(pelicula) {
-  //   let lista: string[] = [];
-  //   pelicula.forEach(function(element => {
-  //
-  //   });
 
-    //   console.log(element);
-    //   this.arregloPeliculas.push(element);
-    // });
-
-
-    // this.arregloPeliculas.push(
-    // {
-    //   "peliculaId": pelicula.peliculaId,
-    //   "nombre": pelicula.nombre,
-    //   "anioLanzamiento": pelicula.anioLanzamiento,
-    //   "rating": pelicula.rating,
-    //   "genero": pelicula.genero,
-    //   "duracion": pelicula.duracion,
-    //   "idioma": pelicula.idioma,
-    //   "costo": pelicula.costo,
-    //   "actorId": pelicula.actorId
-    //  });
-
-
-    // console.log(this.arregloPeliculas);
-  // }
-
-  // imprimirPeli(){
-  //   console.log("Peliculas  ");
-  //   console.log(this.arregloPeliculas);
-  // }
-  //
-  // imprimirObjeto(pelicula){
-  //   console.log(pelicula);
-  // }
 }

@@ -23,6 +23,7 @@ import {RUTAS_APP} from "./app.rutas";
 import { Pagina1Component } from './paginas/pagina1/pagina1.component';
 import { Pagina2Component } from './paginas/pagina2/pagina2.component';
 import { Pagina3Component } from './paginas/pagina3/pagina3.component';
+import { PaginaPrincipalComponent } from './paginas/pagina-principal/pagina-principal.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { Pagina3Component } from './paginas/pagina3/pagina3.component';
     HomeComponent,
     Pagina1Component,
     Pagina2Component,
-    Pagina3Component
+    Pagina3Component,
+    PaginaPrincipalComponent
   ],
   imports: [
     BrowserModule,

@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Pelicula} from "../../home/home/home.component";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/index";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-pelicula-resumen',
@@ -13,17 +14,30 @@ export class PeliculaResumenComponent implements OnInit {
 
   @Input() pelicula;
 
+  // pelis =
+  //   {
+  //     peliculaId: 0,
+  //     nombre: "-----",
+  //     anioLanzamiento: "----",
+  //     rating: 0,
+  //     genero: "----",
+  //     duracion: "----",
+  //     idioma: "------",
+  //     costo: "--",
+  //     actorId: 0
+  //   }
+  // ;
   pelis =
     {
-      peliculaId: 0,
-      nombre: "-----",
-      anioLanzamiento: "----",
-      rating: 0,
-      genero: "----",
-      duracion: "----",
-      idioma: "------",
-      costo: "--",
-      actorId: 0
+      peliculaId: 1,
+      nombre: "Nombre Pelicula",
+      anioLanzamiento: 2000,
+      rating: 3,
+      genero: "Terror",
+      duracion: "2:00 h",
+      idioma: "Español",
+      costo: "30",
+      actorId: 1
     }
   ;
 
@@ -56,7 +70,7 @@ export class PeliculaResumenComponent implements OnInit {
   // @Input() pelicula;
 
 
-  constructor() {
+  constructor( private router:Router) {
   }
 
   ngOnInit() {
@@ -76,6 +90,9 @@ export class PeliculaResumenComponent implements OnInit {
     this.pelis=this.pelicula;
   }
 
+  cambiarRuta(){
+    this.router.navigate(['/pelicula']);
+  }
   // getAutos(): Observable<Pelicula[]> {
   //   return this.http.get<Pelicula[]>(this.urlAutos);
   // }
