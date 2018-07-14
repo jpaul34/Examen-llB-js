@@ -108,7 +108,7 @@
 <div class="row" style="text-align: center">
   <div class="col-sm-12" >
     <br><br>
-    <button type="button" class="btn btn-light" (click)="imprimirPeli()">Cargar más</button>
+    <button type="button" class="btn btn-light">Cargar más</button>
     <br><br><br>
   </div>
 </div>
@@ -133,7 +133,8 @@
       <!--</span>-->
        <!--<div>{{info.nombre}}</div>-->
       <div class="col-sm-3" style= "text-align: center;" *ngFor="let infop of arregloPeliculas;">
-        <app-pelicula-resumen  *ngIf="contador < 4" [peli]="infop"></app-pelicula-resumen>
+        {{infop}}
+        <app-pelicula-resumen  *ngIf="contador < 4" [pelicula]="infop"></app-pelicula-resumen>
       </div>
     </div>
   </div>

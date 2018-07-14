@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eb89f18f-83dc-4a7f-b765-51714b06424b" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/config/datastores.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/config/datastores.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/actor/actor-resumen/actor-resumen.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/actor/actor-resumen/actor-resumen.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/actor/actor-resumen/actor-resumen.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/actor/actor-resumen/actor-resumen.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.rutas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.rutas.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/home/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/home/home/home.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/pelicula/pelicula-resumen/pelicula-resumen.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pelicula/pelicula-resumen/pelicula-resumen.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/pelicula/pelicula-resumen/pelicula-resumen.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/pelicula/pelicula-resumen/pelicula-resumen.component.ts" afterDir="false" />
     </list>
@@ -29,8 +23,8 @@
       <file leaf-file-name="app.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="134" column="94" selection-start-line="134" selection-start-column="94" selection-end-line="134" selection-end-column="94" />
+            <state relative-caret-position="196">
+              <caret line="58" column="41" lean-forward="true" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
               <folding>
                 <element signature="e#1191#1219#0" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#7;n#!!top" expanded="true" />
@@ -42,8 +36,8 @@
       <file leaf-file-name="app.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+            <state relative-caret-position="255">
+              <caret line="81" column="16" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -51,13 +45,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pelicula-resumen.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/src/app/pelicula/pelicula-resumen/pelicula-resumen.component.ts">
+      <file leaf-file-name="pelicula-resumen.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/pelicula/pelicula-resumen/pelicula-resumen.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-211">
-              <caret line="16" column="22" selection-start-line="15" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
+            <state relative-caret-position="153">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               <folding>
-                <element signature="e#0#55#0" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,8 +60,20 @@
       <file leaf-file-name="actor-resumen.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontend/src/app/actor/actor-resumen/actor-resumen.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="60" selection-start-column="49" selection-end-column="60" />
+            <state relative-caret-position="153">
+              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pelicula-resumen.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontend/src/app/pelicula/pelicula-resumen/pelicula-resumen.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="214">
+              <caret line="75" column="28" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#55#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,7 +82,7 @@
         <entry file="file://$PROJECT_DIR$/frontend/src/app/paginas/pagina3/pagina3.component.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
@@ -118,12 +124,12 @@
         <option value="$PROJECT_DIR$/frontend/src/app/paginas/pagina3/pagina3.component.html" />
         <option value="$PROJECT_DIR$/frontend/src/app/app.rutas.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/actor/actor-resumen/actor-resumen.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/home/home/home.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/actor/actor-resumen/actor-resumen.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/pelicula/pelicula-resumen/pelicula-resumen.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/pelicula/pelicula-resumen/pelicula-resumen.component.html" />
-        <option value="$PROJECT_DIR$/frontend/src/app/home/home/home.component.ts" />
-        <option value="$PROJECT_DIR$/frontend/src/app/app.component.ts" />
         <option value="$PROJECT_DIR$/frontend/src/app/app.component.html" />
+        <option value="$PROJECT_DIR$/frontend/src/app/app.component.ts" />
       </list>
     </option>
   </component>
@@ -143,7 +149,7 @@
       <path value="$PROJECT_DIR$/frontend/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="58" />
     <option name="width" value="1311" />
     <option name="height" value="728" />
@@ -280,19 +286,19 @@
       <workItem from="1531412132270" duration="18046000" />
       <workItem from="1531451175804" duration="17375000" />
       <workItem from="1531492917773" duration="6260000" />
-      <workItem from="1531501579460" duration="19717000" />
+      <workItem from="1531501579460" duration="27163000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63755000" />
+    <option name="totallyTimeSpent" value="71201000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TypeScript" order="11" weight="0.28761062" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21669106" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17862372" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
@@ -643,16 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/actor/actor-resumen/actor-resumen.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="30" column="41" lean-forward="true" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
@@ -670,46 +666,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/src/app/pelicula/pelicula-resumen/pelicula-resumen.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/paginas/pagina3/pagina3.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/actor/actor-resumen/actor-resumen.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/actor/actor-resumen/actor-resumen.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="60" selection-start-column="49" selection-end-column="60" />
+        <state relative-caret-position="153">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/pelicula/pelicula-resumen/pelicula-resumen.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-211">
-          <caret line="16" column="22" selection-start-line="15" selection-start-column="4" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="214">
+          <caret line="75" column="28" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="28" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/frontend/src/app/pelicula/pelicula-resumen/pelicula-resumen.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="66" column="29" selection-start-line="66" selection-start-column="29" selection-end-line="66" selection-end-column="29" />
+        <state relative-caret-position="255">
+          <caret line="81" column="16" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
@@ -718,8 +722,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/frontend/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="134" column="94" selection-start-line="134" selection-start-column="94" selection-end-line="134" selection-end-column="94" />
+        <state relative-caret-position="196">
+          <caret line="58" column="41" lean-forward="true" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="41" />
           <folding>
             <element signature="e#1191#1219#0" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#7;n#!!top" expanded="true" />

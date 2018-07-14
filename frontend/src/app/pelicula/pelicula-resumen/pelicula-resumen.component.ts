@@ -8,25 +8,54 @@ import {Observable} from "rxjs/index";
   templateUrl: './pelicula-resumen.component.html',
   styleUrls: ['./pelicula-resumen.component.css']
 })
+
 export class PeliculaResumenComponent implements OnInit {
 
-  @Input() peli:Pelicula[];
+  @Input() pelicula;
 
-  peliculass=[
+  pelis =
     {
-      "peliculaId": 5,
-      "nombre": "Pelicula 5",
-      "anioLanzamiento": 2000,
-      "rating": 3,
-      "genero": "Terror",
-      "duracion": "2:00 h",
-      "idioma": "Español",
-      "costo": "30",
-      "actorId": 1
+      peliculaId: 0,
+      nombre: "-----",
+      anioLanzamiento: "----",
+      rating: 0,
+      genero: "----",
+      duracion: "----",
+      idioma: "------",
+      costo: "--",
+      actorId: 0
     }
-    ];
+  ;
+
+
+  // //
+  // pelicula1 =
+  //   {
+  //     nombre: "pelicula1",
+  //     anio: "2018"
+  //   }
+
+
+
+  //
+  // peliculass=[
+  //   {
+  //     "peliculaId": 5,
+  //     "nombre": "Pelicula 5",
+  //     "anioLanzamiento": 2000,
+  //     "rating": 3,
+  //     "genero": "Terror",
+  //     "duracion": "2:00 h",
+  //     "idioma": "Español",
+  //     "costo": "30",
+  //     "actorId": 1
+  //   }
+  //   ];
   // detalles=[];
   // urlAutos= 'http://localhost:1337/pelicula';
+  // @Input() pelicula;
+
+
   constructor() {
   }
 
@@ -39,8 +68,12 @@ export class PeliculaResumenComponent implements OnInit {
     // });
 
   }
-  imprimirPeli(){
-    console.log(this.peli);
+  // imprimirPeli(){
+  //   console.log(this.peli);
+  // }
+  //
+  cargarDatos(){
+    this.pelis=this.pelicula;
   }
 
   // getAutos(): Observable<Pelicula[]> {

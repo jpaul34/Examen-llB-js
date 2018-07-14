@@ -63,8 +63,44 @@ export class AppComponent implements OnInit {
   // getActores(): Observable<Actor> {
   //   return this.http.get<Actor>(this.urlActor);
   // }
+  registrarPeliculas(pelicula){
+    let lista=[];
+    // lista+="[";
+    pelicula.forEach(function (valor, indice, arreglo) {
+      console.log('valor', valor);
+      console.log('indice', indice);
+      console.log('arreglo', arreglo);
+      if(valor!=null){
+        lista.push(valor);
+      }
 
-  registrarPeliculas(pelicula) {
+    });
+    console.log("mensaje : ",this.mensaje);
+    console.log(pelicula);
+    console.log("lista: ",lista);
+    // lista+="]";
+    if(lista.){
+      this.arregloPeliculas.push(lista);
+    }
+
+  }
+
+  agregarPeli(valor){
+    this.arregloPeliculas.push(valor);
+  }
+
+
+  // registrarPeliculas(pelicula) {
+  //   let lista: string[] = [];
+  //   pelicula.forEach(function(element => {
+  //
+  //   });
+
+    //   console.log(element);
+    //   this.arregloPeliculas.push(element);
+    // });
+
+
     // this.arregloPeliculas.push(
     // {
     //   "peliculaId": pelicula.peliculaId,
@@ -78,16 +114,16 @@ export class AppComponent implements OnInit {
     //   "actorId": pelicula.actorId
     //  });
 
-    this.arregloPeliculas.push(pelicula);
+
     // console.log(this.arregloPeliculas);
-  }
+  // }
 
-  imprimirPeli(){
-    console.log("Peliculas  ");
-    console.log(this.arregloPeliculas);
-  }
-
-  imprimirObjeto(pelicula){
-    console.log(pelicula);
-  }
+  // imprimirPeli(){
+  //   console.log("Peliculas  ");
+  //   console.log(this.arregloPeliculas);
+  // }
+  //
+  // imprimirObjeto(pelicula){
+  //   console.log(pelicula);
+  // }
 }
