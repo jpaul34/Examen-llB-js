@@ -14,9 +14,9 @@ export class TiendaFacturaComponent implements OnInit {
 
   usuario = [
     {
-      nombre: "usuario",
-      apellido: "user",
-      correo: "correo@mail.com",
+      nombre: "Jonathan",
+      apellido: "Caiza",
+      correo: "jonathan.caiza@epn.edu.ec",
       usuario: "usuario1"
     }
   ];
