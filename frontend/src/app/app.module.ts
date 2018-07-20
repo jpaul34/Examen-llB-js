@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 
-
 import { AppComponent } from './app.component';
+
 import { TiendaCarritoComponent } from './tienda/tienda-carrito/tienda-carrito.component';
 import { TiendaFacturaComponent } from './tienda/tienda-factura/tienda-factura.component';
 import { ActorDetalleComponent } from './actor/actor-detalle/actor-detalle.component';
@@ -15,7 +15,7 @@ import { PerfilUsuarioComponent } from './tienda/perfil-usuario/perfil-usuario.c
 import { DatosFacturaComponent } from './tienda/datos-factura/datos-factura.component';
 import { TiendaBuscadorComponent } from './tienda/tienda-buscador/tienda-buscador.component';
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HomeComponent } from './home/home/home.component';
 import { CookieService } from 'ngx-cookie-service';
 import {RouterModule} from "@angular/router";
@@ -47,6 +47,7 @@ import { PaginaPrincipalComponent } from './paginas/pagina-principal/pagina-prin
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,RouterModule.forRoot(
       RUTAS_APP,
       {

@@ -26,8 +26,10 @@
   <div class="col-sm-8">
     <div class="row">
       <div class="col-sm-4" style= "text-align: center;" *ngFor="let info of mensaje; let indice = index">
+        <!--{{info}}-->
+        <!--<app-pelicula-resumen [pelicula]="info" ></app-pelicula-resumen>-->
         <app-actor-resumen [actor]="info" ></app-actor-resumen>
-        {{registrarPeliculas(info.peliculas)}}
+        <!--{{registrarPeliculas(info.peliculas)}}-->
         <!--{{imprimirObjeto(info.peliculas)}}-->
         <!--<div>{{info.nombre}}</div>-->
       </div>
@@ -62,58 +64,64 @@
   </div>
   <div class="col-sm-8">
     <div class="row">
-      <div class="col-sm-3" style= "text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
+      <!--<div class="col-sm-3" style= "text-align: center;">-->
+      <div class="col-sm-3" style="text-align: center;" *ngFor="let info of mensajePeli; let indice = index">
+        <app-pelicula-resumen [pelicula]="info" *ngIf="indice<numPeliculas"></app-pelicula-resumen>
+        <!--{{registrarPeliculas(info.peliculas)}}-->
+        <!--{{imprimirObjeto(info.peliculas)}}-->
+        <!--<div>{{info.nombre}}</div>-->
       </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
+      <!--</div>-->
+      <!--<div class="col-sm-3" style= "text-align: center;">-->
+      <!--<app-pelicula-resumen></app-pelicula-resumen>-->
+      <!--</div>-->
+      <!--<div class="col-sm-3" style="text-align: center;">-->
+      <!--<app-pelicula-resumen></app-pelicula-resumen>-->
+      <!--</div>-->
+      <!--<div class="col-sm-3" style="text-align: center;">-->
+      <!--<app-pelicula-resumen></app-pelicula-resumen>-->
+      <!--</div>-->
+      <!--<div class="col-sm-3" style="text-align: center;">-->
+      <!--<app-pelicula-resumen></app-pelicula-resumen>-->
+      <!--</div>-->
     </div>
   </div>
   <div class="col-sm-2">
   </div>
-</div>
 
-
-<div class="row">
   <br>
   <br>
 </div>
 
-<div class="row">
 
-  <div class="col-sm-2">
-  </div>
-  <div class="col-sm-8">
-    <div class="row">
-      <div class="col-sm-3" style= "text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-      <div class="col-sm-3" style="text-align: center;">
-        <app-pelicula-resumen></app-pelicula-resumen>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-2">
-  </div>
-</div>
+<!--<div class="row">-->
+
+  <!--<div class="col-sm-2">-->
+  <!--</div>-->
+  <!--<div class="col-sm-8">-->
+    <!--<div class="row">-->
+      <!--<div class="col-sm-3" style= "text-align: center;">-->
+        <!--<app-pelicula-resumen></app-pelicula-resumen>-->
+      <!--</div>-->
+      <!--<div class="col-sm-3" style="text-align: center;">-->
+        <!--<app-pelicula-resumen></app-pelicula-resumen>-->
+      <!--</div>-->
+      <!--<div class="col-sm-3" style="text-align: center;">-->
+        <!--<app-pelicula-resumen></app-pelicula-resumen>-->
+      <!--</div>-->
+      <!--<div class="col-sm-3" style="text-align: center;">-->
+        <!--<app-pelicula-resumen></app-pelicula-resumen>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col-sm-2">-->
+  <!--</div>-->
+<!--</div>-->
 
 <div class="row" style="text-align: center">
   <div class="col-sm-12" >
     <br><br>
-    <button type="button" class="btn btn-light">Cargar más</button>
+    <button type="button" class="btn btn-light" (click)="aumentarNumPelis()">Cargar más</button>
     <br><br><br>
   </div>
 </div>

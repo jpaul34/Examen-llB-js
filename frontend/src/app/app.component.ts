@@ -17,9 +17,10 @@ export class AppComponent implements OnInit {
 
   constructor( private http: HttpClient,
                private cookieService: CookieService,
-               private data: UsuarioService,
-               private _usuarioService: UsuarioService,
-               private router:Router) { }
+               private servicio: UsuarioService,
+               private router:Router) {
+    this.servicio.guardarUrl('http://localhost:1337/actor');
+  }
   URLActores  = 'http://localhost:1337/actor';
   mensaje;
 
@@ -27,9 +28,10 @@ export class AppComponent implements OnInit {
   visible=true;
 
   ngOnInit(): void {
-    this.cookieService.set( 'user', 'Jonathan' );
-    this.cookieService.set( 'correo', 'jonathan.caiza@epn.edu.ec' );
+    this.cookieService.set( 'nombre', 'Jonathan' );
     this.cookieService.set( 'apellido', 'Caiza' );
+    this.cookieService.set( 'correo', 'jonathan.caiza@epn.edu.ec' );
+
 
     this.cookieValue = this.cookieService.get('user');
     console.log('valor cookie '+this.cookieValue);
@@ -45,12 +47,12 @@ export class AppComponent implements OnInit {
   seleccionar(indice){
     const url = ['/pelicula'];
     this.router.navigate(url);
-    this._usuarioService.setIndice(indice);
+    this.servicio.setIndice(indice);
     return indice;
   }
 
   escucharCambiosActor() {
-    this._usuarioService.emitircambioPelicula.subscribe((actor) => {
+    this.servicio.emitircambioPelicula.subscribe((actor) => {
       this.contador = actor;
     });
   }

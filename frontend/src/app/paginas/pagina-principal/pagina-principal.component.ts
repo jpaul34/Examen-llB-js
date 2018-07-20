@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {UsuarioService} from "../../servicios/usuario.service";
 import {CookieService} from "ngx-cookie-service";
+import {Pelicula} from "../../home/home/home.component";
 
 @Component({
   selector: 'app-pagina-principal',
@@ -9,24 +10,46 @@ import {CookieService} from "ngx-cookie-service";
   styleUrls: ['./pagina-principal.component.css']
 })
 export class PaginaPrincipalComponent implements OnInit {
-  constructor( private http: HttpClient,
-               private data: UsuarioService,
-               private _usuarioService: UsuarioService) { }
+
   contador = 0;
   datosActor;
   mensaje;
+  mensajePeli:Pelicula;
   arregloPeliculas = [];
+  // URLActores  = this.servicio.urlnueva;
   URLActores  = 'http://localhost:1337/actor';
+  URLPelicula  = 'http://localhost:1337/pelicula';
   visible=false;
+  numPeliculas=0;
+
+  constructor( private http: HttpClient,
+               private data: UsuarioService,
+               private servicio: UsuarioService) {
+    //
+    // console.log("URL Nueva Princiapal:" )
+    // // console.log("La url Actual es: "+this.servicio.urlnueva)
+    // let aux2;
+    this.http.get(this.URLActores).subscribe((data) => {
+      this.data.cambiarMensaje(data);
+      console.log('Datoss: ',data);
+    });
+    //
+    // let aux;
+      this.http.get(this.URLPelicula).subscribe((data2) => {
+        this.data.cambiarMensajePelicula(data2);
+        console.log('pelicula: ',data2);
+      });
+        // console.log("base de datos",aux)
+    // this.escucharCambiosPelicula();
+  }
 
   ngOnInit(): void {
-
-    this.http.get(this.URLActores).subscribe((data) => {
-      this.mensaje = data;
-      this.data.cambiarMensaje(this.mensaje);
-    });
-      this.escucharCambiosPelicula();
-//    }
+        // let aux;
+        this.servicio.mensajeActual.subscribe(mensaje => this.mensaje = mensaje);
+        // console.log("base de datos",this.mensaje);
+         this.servicio.mensajePelicula.subscribe(mensajePelicula => this.mensajePeli = mensajePelicula);
+        // console.log("base de datos",this.mensajePeli );
+    // }
     // console.log(this.data);
   }
 
@@ -35,7 +58,7 @@ export class PaginaPrincipalComponent implements OnInit {
   }
 
   escucharCambiosPelicula() {
-    this._usuarioService.emitircambioPelicula.subscribe((pelicula) => {
+    this.servicio.emitircambioPelicula.subscribe((pelicula) => {
       this.contador = pelicula;
     });
   }
@@ -66,9 +89,9 @@ export class PaginaPrincipalComponent implements OnInit {
     // lista+="[";
     if(pelicula.length>0){
       pelicula.forEach(function (valor, indice, arreglo) {
-        console.log('valor', valor);
-        console.log('indice', indice);
-        console.log('arreglo', arreglo);
+        // console.log('valor', valor);
+        // console.log('indice', indice);
+        // console.log('arreglo', arreglo);
         if(valor!=null){
           lista.push(valor);
         }
@@ -82,7 +105,6 @@ export class PaginaPrincipalComponent implements OnInit {
     if(lista.length>0){
       this.arregloPeliculas.push(lista);
     }
-
   }
 
   agregarPeli(valor){
@@ -126,4 +148,7 @@ export class PaginaPrincipalComponent implements OnInit {
   // imprimirObjeto(pelicula){
   //   console.log(pelicula);
   // }
+  aumentarNumPelis(){
+    this.numPeliculas=this.numPeliculas+4;
+  }
 }

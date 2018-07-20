@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Pelicula} from "../../home/home/home.component";
+import {Component, Input, OnInit, Output} from '@angular/core';
+import {Actor, Pelicula} from "../../home/home/home.component";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/index";
+import {UsuarioService} from "../../servicios/usuario.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -12,7 +13,17 @@ import {Router} from "@angular/router";
 
 export class PeliculaResumenComponent implements OnInit {
 
-  @Input() pelicula;
+  @Input() pelicula={
+        peliculaId: 0,
+        nombre: "-----",
+        anioLanzamiento: "----",
+        rating: 0,
+        genero: "----",
+        duracion: "----",
+        idioma: "------",
+        costo: "--",
+        actorId: 0
+      };
 
   // pelis =
   //   {
@@ -70,7 +81,9 @@ export class PeliculaResumenComponent implements OnInit {
   // @Input() pelicula;
 
 
-  constructor( private router:Router) {
+  constructor( private data: UsuarioService,
+               private _usuarioService: UsuarioService,
+               private router:Router) {
   }
 
   ngOnInit() {
@@ -86,9 +99,9 @@ export class PeliculaResumenComponent implements OnInit {
   //   console.log(this.peli);
   // }
   //
-  cargarDatos(){
-    this.pelis=this.pelicula;
-  }
+  // cargarDatos(){
+  //   this.pelis=this.pelicula;
+  // }
 
   cambiarRuta(){
     this.router.navigate(['/pelicula']);

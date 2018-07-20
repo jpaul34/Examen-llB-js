@@ -14,16 +14,18 @@ export class HomeComponent implements OnInit {
   //
   // config: Actor;
   // contador=this._usuarioService.contador;
-  // user;
+  user;
   //
   constructor(
-    // private http: HttpClient, private _usuarioService:UsuarioService, private cookieService: CookieService
+     // private http: HttpClient, private _usuarioService:UsuarioService, private cookieService: CookieService
   ) {
   }
   //
   ngOnInit() {
     // this.escucharCambiosPelicula();
     // this.user=this.cookieService.get('user');
+    // this.user=this.cookieService.get('user');
+
   }
   //
   // escucharCambiosPelicula() {
