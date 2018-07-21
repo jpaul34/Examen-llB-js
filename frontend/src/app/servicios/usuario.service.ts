@@ -12,27 +12,38 @@ import {BehaviorSubject, Observable} from "rxjs/index";
 export class UsuarioService {
 
   private fuenteMensaje = new BehaviorSubject<any>([]);
+  private fuenteMensaje2 = new BehaviorSubject<any>([]);
   private fuenteMensajePelicula = new BehaviorSubject<any>([]);
   visible=true;
   contador=0;
-  parametros;
-  urlnueva;
-  mostrar=true;
-  urlnuevaHijos;
 
   mensajeActual = this.fuenteMensaje.asObservable();
+  mensajeActual2 = this.fuenteMensaje2.asObservable();
   mensajePelicula = this.fuenteMensajePelicula.asObservable();
 
-  emitircambioPelicula:EventEmitter<number>=new EventEmitter();
+  emitircambioCantidad:EventEmitter<number>=new EventEmitter();
   emiircambioEliminar:EventEmitter<boolean>=new EventEmitter();
   emitircambioBusqueda:EventEmitter<string>=new EventEmitter();
 
-  indiceSeleccionado;
-  indiceHijos;
-  elmiminartotal=0;
+  indiceActorSeleccionado;
+  indicePeliculaSeleccionada;
+  peliculaSelecionada;
 
-  setIndice(indice){
-    this.indiceSeleccionado=indice;
+  aumentarContador(){
+    this.contador=this.contador+1;
+    console.log(this.contador)
+  }
+
+  setIndiceActor(indiceActor){
+    this.indiceActorSeleccionado=indiceActor;
+  }
+
+  setIndicePelicula(indicePelicula){
+    this.indicePeliculaSeleccionada=indicePelicula;
+  }
+
+  setPeliculaSeleccionada(pelicula){
+    this.peliculaSelecionada=pelicula;
   }
 
   constructor() { }
@@ -40,6 +51,11 @@ export class UsuarioService {
   cambiarMensaje(mensaje) {
     // console.log(mensaje);
     this.fuenteMensaje.next(mensaje);
+  }
+
+  cambiarMensaje2(mensaje) {
+    // console.log(mensaje);
+    this.fuenteMensaje2.next(mensaje);
   }
 
   cambiarMensajePelicula(mensajePelicula) {
@@ -52,19 +68,19 @@ export class UsuarioService {
     this.emiircambioEliminar.emit(visible);
   }
 
-  emitirCambio(cambioPelicula:number){
-    this.contador=cambioPelicula;
-    this.emitircambioPelicula.emit(cambioPelicula);
+  emitirCambioCantidad(){
+    this.aumentarContador();
+    this.emitircambioCantidad.emit(this.contador);
   }
-
-  guardarUrl(urlnueva: string){
-    this.urlnueva=urlnueva;
-    return urlnueva;
-  }
-
-  guardarUrlHijos(urlnuevahijos:string){
-    this.urlnuevaHijos=urlnuevahijos;
-    return urlnuevahijos;
-  }
+  //
+  // guardarUrl(urlnueva: string){
+  //   this.urlnueva=urlnueva;
+  //   return urlnueva;
+  // }
+  //
+  // guardarUrlHijos(urlnuevahijos:string){
+  //   this.urlnuevaHijos=urlnuevahijos;
+  //   return urlnuevahijos;
+  // }
 
 }

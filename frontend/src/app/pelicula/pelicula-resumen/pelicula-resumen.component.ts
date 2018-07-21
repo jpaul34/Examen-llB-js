@@ -14,6 +14,7 @@ import {Router} from "@angular/router";
 export class PeliculaResumenComponent implements OnInit {
 
   @Input() pelicula={
+        id:0,
         peliculaId: 0,
         nombre: "-----",
         anioLanzamiento: "----",
@@ -25,89 +26,14 @@ export class PeliculaResumenComponent implements OnInit {
         actorId: 0
       };
 
-  // pelis =
-  //   {
-  //     peliculaId: 0,
-  //     nombre: "-----",
-  //     anioLanzamiento: "----",
-  //     rating: 0,
-  //     genero: "----",
-  //     duracion: "----",
-  //     idioma: "------",
-  //     costo: "--",
-  //     actorId: 0
-  //   }
-  // ;
-  pelis =
-    {
-      peliculaId: 1,
-      nombre: "Nombre Pelicula",
-      anioLanzamiento: 2000,
-      rating: 3,
-      genero: "Terror",
-      duracion: "2:00 h",
-      idioma: "Español",
-      costo: "30",
-      actorId: 1
-    }
-  ;
+  constructor( private servicio: UsuarioService,
+               private router:Router) { }
 
-
-  // //
-  // pelicula1 =
-  //   {
-  //     nombre: "pelicula1",
-  //     anio: "2018"
-  //   }
-
-
-
-  //
-  // peliculass=[
-  //   {
-  //     "peliculaId": 5,
-  //     "nombre": "Pelicula 5",
-  //     "anioLanzamiento": 2000,
-  //     "rating": 3,
-  //     "genero": "Terror",
-  //     "duracion": "2:00 h",
-  //     "idioma": "Español",
-  //     "costo": "30",
-  //     "actorId": 1
-  //   }
-  //   ];
-  // detalles=[];
-  // urlAutos= 'http://localhost:1337/pelicula';
-  // @Input() pelicula;
-
-
-  constructor( private data: UsuarioService,
-               private _usuarioService: UsuarioService,
-               private router:Router) {
-  }
-
-  ngOnInit() {
-    //
-    // this.http.get<Pelicula[]>(this.urlAutos).subscribe((data: Pelicula[]) => {
-    //   this.peliculas = data;
-    //   console.log(this.peliculas)
-    //   //  this.detalles=this.autos.map(datos=>datos.nombres);
-    // });
-
-  }
-  // imprimirPeli(){
-  //   console.log(this.peli);
-  // }
-  //
-  // cargarDatos(){
-  //   this.pelis=this.pelicula;
-  // }
+  ngOnInit() { }
 
   cambiarRuta(){
+    this.servicio.setIndicePelicula(this.pelicula.id);
     this.router.navigate(['/pelicula']);
   }
-  // getAutos(): Observable<Pelicula[]> {
-  //   return this.http.get<Pelicula[]>(this.urlAutos);
-  // }
 
 }

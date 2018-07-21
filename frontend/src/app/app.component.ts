@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
                private cookieService: CookieService,
                private servicio: UsuarioService,
                private router:Router) {
-    this.servicio.guardarUrl('http://localhost:1337/actor');
+    // this.servicio.guardarUrl('http://localhost:1337/actor');
   }
   URLActores  = 'http://localhost:1337/actor';
   mensaje;
@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
     this.cookieValue = this.cookieService.get('user');
     console.log('valor cookie '+this.cookieValue);
 
-      this.escucharCambiosActor();
+      // this.escucharCambiosActor();
 //    }
   }
 
@@ -44,18 +44,18 @@ export class AppComponent implements OnInit {
     this.contador= this.contador+1;
   }
 
-  seleccionar(indice){
-    const url = ['/pelicula'];
-    this.router.navigate(url);
-    this.servicio.setIndice(indice);
-    return indice;
-  }
+  // seleccionar(indice){
+  //   const url = ['/pelicula'];
+  //   this.router.navigate(url);
+  //   this.servicio.setIndice(indice);
+  //   return indice;
+  // }
 
-  escucharCambiosActor() {
-    this.servicio.emitircambioPelicula.subscribe((actor) => {
-      this.contador = actor;
-    });
-  }
+  // escucharCambiosActor() {
+  //   this.servicio.emitircambioPelicula.subscribe((actor) => {
+  //     this.contador = actor;
+  //   });
+  // }
 
 
 

@@ -9,32 +9,23 @@ import {HttpClient} from "@angular/common/http";
 })
 export class Pagina1Component implements OnInit {
 
-  actor;
-  peliculas;
+  numPeliculas=8;
   indice;
-  urlActor: 'http://localhost:1337/actor?id=';
-  urlPelicula: 'http://localhost:1337/pelicula?actorId=';
+  mensajePeli;
+  urlPelicula= 'http://localhost:1337/pelicula?actorId=';
 
   constructor(private http: HttpClient, private servicio: UsuarioService) {
+    this.indice=this.servicio.indiceActorSeleccionado;
+    this.http.get(this.urlPelicula+this.indice).subscribe((data) => {
+      this.servicio.cambiarMensajePelicula(data);
+    });
   }
 
   ngOnInit() {
-    // this.indice=this.servicio.indiceSeleccionado;
-    // this.http.get(this.urlActor+this.indice).subscribe((data) => {
-    //   //this.servicio.cambiarMensajePelicula(data2);
-    //   // console.log('pelicula: ',data2);
-    //   this.actor=data;
-    // });
-    //
-    // this.http.get(this.urlPelicula+this.indice).subscribe((data) => {
-    //   //this.servicio.cambiarMensajePelicula(data2);
-    //   // console.log('pelicula: ',data2);
-    //   this.actor=data;
-    // });
-    // this.http.get(this.urlActor+this.indice).subscribe((data) => {
-    //   this.actor.cambiarMensaje(data);
-    //   console.log('Datoss: ',data);
-    // });
+    this.servicio.mensajePelicula.subscribe(mensajePelicula => this.mensajePeli = mensajePelicula);
   }
 
+  aumentarNumPelis(){
+    this.numPeliculas=this.numPeliculas+4;
+  }
 }

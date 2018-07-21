@@ -20,7 +20,7 @@ export class PaginaPrincipalComponent implements OnInit {
   URLActores  = 'http://localhost:1337/actor';
   URLPelicula  = 'http://localhost:1337/pelicula';
   visible=false;
-  numPeliculas=0;
+  numPeliculas=8;
 
   constructor( private http: HttpClient,
                private data: UsuarioService,
@@ -57,11 +57,11 @@ export class PaginaPrincipalComponent implements OnInit {
     this.contador= this.contador+1;
   }
 
-  escucharCambiosPelicula() {
-    this.servicio.emitircambioPelicula.subscribe((pelicula) => {
-      this.contador = pelicula;
-    });
-  }
+  // escucharCambiosPelicula() {
+  //   this.servicio.emitircambioPelicula.subscribe((pelicula) => {
+  //     this.contador = pelicula;
+  //   });
+  // }
 
   //
   // actores: Actor;

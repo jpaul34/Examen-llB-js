@@ -12,30 +12,18 @@ export class ActorDetalleComponent implements OnInit {
 
   actor;
   retirado='No';
-  // actor=
-  //   {
-  //     nombre:'---',
-  //     apellido: "---",
-  //     fechaNacimiento: "00/00/0000",
-  //     numeroPeliculas: 0,
-  //     retirado: false
-  //   }
-  // ;
   urlActor='http://localhost:1337/actor?id=';
   indice;
 
-
   constructor(private http: HttpClient, private servicio: UsuarioService) {
-    this.indice=this.servicio.indiceSeleccionado;
+    this.indice=this.servicio.indiceActorSeleccionado;
     this.http.get(this.urlActor+this.indice).subscribe((data) => {
       this.servicio.cambiarMensaje(data);
-      // console.log('Datoss: ',data);
     });
   }
 
   ngOnInit() {
     this.servicio.mensajeActual.subscribe(mensaje => this.actor = mensaje);
-    // this.actor=this.servicio.mensajeActual;
   }
 
   estaretirado(retirado){
@@ -43,5 +31,4 @@ export class ActorDetalleComponent implements OnInit {
       this.retirado='Si'
     }
   }
-
 }

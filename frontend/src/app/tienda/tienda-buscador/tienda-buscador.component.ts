@@ -25,13 +25,9 @@ export class TiendaBuscadorComponent implements OnInit {
               private _router:Router) {
   }
   ngOnInit() {
-    this.escucharCambiosAuto();
     this.escucharCambioBusqueda();
   }
 
-  escucharCambiosAuto() {
-    this.servicio.emitircambioPelicula.subscribe((autos) => {this.seleccionPeli= autos;})
-  }
 
   escucharCambioBusqueda() {
     this.servicio.emitircambioBusqueda.subscribe((autos) => {this.nuevaUrl= autos;})
@@ -61,9 +57,9 @@ export class TiendaBuscadorComponent implements OnInit {
      // this.servicio.guardarUrlHijos('http://localhost:1337/actor?nombreMarca='+this.marca);
     // let aux;
     // console.log("Nueva Url ",this.servicio.urlnueva )
-    this.http.get(this.servicio.urlnueva).subscribe((data) => {
-      this.servicio.cambiarMensaje(data);
-    });
+    // this.http.get(this.servicio.urlnueva).subscribe((data) => {
+    //   this.servicio.cambiarMensaje(data);
+    // });
   }
 
 }

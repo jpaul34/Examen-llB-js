@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Actor, Pelicula} from "../../home/home/home.component";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/index";
+import {UsuarioService} from "../../servicios/usuario.service";
 
 @Component({
   selector: 'app-pelicula-detalle',
@@ -10,36 +11,39 @@ import {Observable} from "rxjs/index";
 })
 export class PeliculaDetalleComponent implements OnInit {
 
-  peliculas=[
-    {
-      "peliculaId": 5,
-      "nombre": "Pelicula 5",
-      "anioLanzamiento": 2000,
-      "rating": 3,
-      "genero": "Terror",
-      "duracion": "2:00 h",
-      "idioma": "Español",
-      "costo": "30",
-      "actorId": 1
-    }
-    ];
+  actor;
+  pelicula;
+  mensaje;
+  urlPelicula='http://localhost:1337/pelicula?id=';
+  urlActor='http://localhost:1337/actor?id=';
+  indice;
+  indiceActor;
 
-  // detalles=[];
-  // urlAutos= 'http://localhost:1337/pelicula';
-  constructor() {
+  constructor(private http: HttpClient, private servicio: UsuarioService) {
+    this.indice=this.servicio.indicePeliculaSeleccionada;
+    this.http.get(this.urlPelicula+this.indice).subscribe((data) => {
+      this.servicio.cambiarMensaje(data);
+
+    });
+    this.indiceActor=this.servicio.indiceActorSeleccionado;
+    this.http.get(this.urlActor+this.indiceActor).subscribe((data) => {
+      this.servicio.cambiarMensaje2(data);
+      // console.log('Datoss: ',data);
+    });
   }
 
   ngOnInit() {
-
-    // this.http.get<Pelicula[]>(this.urlAutos).subscribe((data: Pelicula[]) => {
-    //   this.peliculas = data;
-    //   console.log(this.peliculas)
-    // //  this.detalles=this.autos.map(datos=>datos.nombres);
-    // });
-
+    this.servicio.mensajeActual.subscribe(mensaje => this.pelicula = mensaje);
+    this.servicio.mensajeActual2.subscribe(mensaje => this.actor = mensaje);
   }
 
-  // getAutos(): Observable<Pelicula[]> {
-  //   return this.http.get<Pelicula[]>(this.urlAutos);
-  // }
+  setActor(actor){
+    console.log(actor);
+
+    // this.actorNombre= actor.nombre+' '+actor.apellido;
+    // console.log('el dato es', dato.nombre);
+  }
+
+
+
 }

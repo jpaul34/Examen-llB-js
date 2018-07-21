@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {UsuarioService} from "../../servicios/usuario.service";
 
 @Component({
   selector: 'app-pagina2',
@@ -8,12 +9,15 @@ import {Router} from "@angular/router";
 })
 export class Pagina2Component implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private servicio:UsuarioService,
+              private router:Router) { }
 
   ngOnInit() {
   }
 
   cambiarRuta(){
-    this.router.navigate(['/carrito']);
+    // this.servicio.aumentarContador()
+    this.servicio.emitirCambioCantidad();
+    this.router.navigate(['/']);
   }
 }
