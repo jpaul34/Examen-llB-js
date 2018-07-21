@@ -31,13 +31,13 @@ export class PaginaPrincipalComponent implements OnInit {
     // let aux2;
     this.http.get(this.URLActores).subscribe((data) => {
       this.data.cambiarMensaje(data);
-      console.log('Datoss: ',data);
+      // console.log('Datoss: ',data);
     });
     //
     // let aux;
       this.http.get(this.URLPelicula).subscribe((data2) => {
         this.data.cambiarMensajePelicula(data2);
-        console.log('pelicula: ',data2);
+        // console.log('pelicula: ',data2);
       });
         // console.log("base de datos",aux)
     // this.escucharCambiosPelicula();

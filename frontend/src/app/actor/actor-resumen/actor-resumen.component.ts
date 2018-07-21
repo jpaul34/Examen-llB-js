@@ -13,30 +13,41 @@ import {Router} from "@angular/router";
 export class ActorResumenComponent implements OnInit {
 
   @Input() actor;
-  // actores: Actor;
-  actores=[
-    {
-      "peliculas": [],
-      "id": 2,
-      "nombre": "Will",
-      "apellido": "Smith",
-      "fechaNacimiento": "01/01/1979",
-      "numeroPeliculas": 6,
-      "retirado": false
-    }
-  ];
-
-  //actor = this.actorAux;
 
   constructor(private data: UsuarioService,
-              private _usuarioService: UsuarioService,
+              private servicio: UsuarioService,
               private router:Router) { }
-
 
   ngOnInit() {
     // this.data.mensajeActual.subscribe(mensaje => this.actor = mensaje);
     // console.log(this.actor);
   }
+
+  cambiarRuta(){
+    this.servicio.setIndice(this.actor.id);
+    this.router.navigate(['/actor']);
+  }
+
+  seleccionar(indice){
+    this.router.navigate(['/actor']);
+    this.servicio.setIndice(indice);
+    return indice;
+  }
+
+  // actores: Actor;
+  // actores=[
+  //   {
+  //     "peliculas": [],
+  //     "id": 2,
+  //     "nombre": "Will",
+  //     "apellido": "Smith",
+  //     "fechaNacimiento": "01/01/1979",
+  //     "numeroPeliculas": 6,
+  //     "retirado": false
+  //   }
+  // ];
+
+  //actor = this.actorAux;
 
   // imprimirActor(){
   //   console.log(this.actorAux);
@@ -65,13 +76,5 @@ export class ActorResumenComponent implements OnInit {
   //
   //
 
-  seleccionar(indice){
-    this.router.navigate(['/actor']);
-    this._usuarioService.setIndice(indice);
-    return indice;
-  }
 
-  cambiarRuta(){
-    this.router.navigate(['/actor']);
-  }
 }

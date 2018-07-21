@@ -48,23 +48,22 @@ export class TiendaBuscadorComponent implements OnInit {
 
   mostrarBusqueda(actor)
   {
+    this._router.navigate(['/principal'])
     this.ngModelChange.emit(actor);
     this.nombreActor=actor;
     this.buscar().subscribe((data: Actor) => console.log({data}));
-    this.nuevaUrl=this.urlActor+''+this.nombreActor;
-    this.servicio.guardarUrl(this.nuevaUrl);
-    this.mostrar=this.servicio.mostrar;
+    // this.nuevaUrl=this.urlActor+''+this.nombreActor;
+    // this.servicio.guardarUrl(this.nuevaUrl);
+    // this.mostrar=this.servicio.mostrar;
     this.http.get<Actor[]>(this.nuevaUrl).subscribe((data: Actor[]) => {
       this.actor = data;
     });
-    this.servicio.guardarUrlHijos('http://localhost:1337/actor?nombreMarca='+this.marca);
-    let aux;
-    console.log("Nueva Url ",this.servicio.urlnueva )
+     // this.servicio.guardarUrlHijos('http://localhost:1337/actor?nombreMarca='+this.marca);
+    // let aux;
+    // console.log("Nueva Url ",this.servicio.urlnueva )
     this.http.get(this.servicio.urlnueva).subscribe((data) => {
       this.servicio.cambiarMensaje(data);
     });
-
-
   }
 
 }

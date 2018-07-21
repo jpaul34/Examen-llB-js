@@ -17,7 +17,8 @@ export class UsuarioService {
   contador=0;
   parametros;
   urlnueva;
-  mostrar=true;urlnuevaHijos;
+  mostrar=true;
+  urlnuevaHijos;
 
   mensajeActual = this.fuenteMensaje.asObservable();
   mensajePelicula = this.fuenteMensajePelicula.asObservable();
@@ -26,7 +27,9 @@ export class UsuarioService {
   emiircambioEliminar:EventEmitter<boolean>=new EventEmitter();
   emitircambioBusqueda:EventEmitter<string>=new EventEmitter();
 
-  indiceSeleccionado;indiceHijos;elmiminartotal=0;
+  indiceSeleccionado;
+  indiceHijos;
+  elmiminartotal=0;
 
   setIndice(indice){
     this.indiceSeleccionado=indice;
@@ -35,12 +38,12 @@ export class UsuarioService {
   constructor() { }
 
   cambiarMensaje(mensaje) {
-    console.log(mensaje);
+    // console.log(mensaje);
     this.fuenteMensaje.next(mensaje);
   }
 
   cambiarMensajePelicula(mensajePelicula) {
-    console.log(mensajePelicula);
+    // console.log(mensajePelicula);
     this.fuenteMensajePelicula.next(mensajePelicula);
   }
 
