@@ -32,6 +32,7 @@ export class PeliculaResumenComponent implements OnInit {
   ngOnInit() { }
 
   cambiarRuta(){
+    this.servicio.setPeliculaSeleccionada(this.pelicula);
     this.servicio.setIndicePelicula(this.pelicula.id);
     this.router.navigate(['/pelicula']);
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UsuarioService} from "../../servicios/usuario.service";
 
 @Component({
   selector: 'app-pagina3',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Pagina3Component implements OnInit {
 
-  constructor() { }
+  mensaje;
+
+  constructor(private servicio:UsuarioService) { }
 
   ngOnInit() {
+    this.mensaje=this.servicio.peliculasSeleccionadas;
+  }
+
+  imprimir(){
+    console.log('peliculas seleccionadas ',this.servicio.peliculasSeleccionadas);
   }
 
 }

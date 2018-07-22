@@ -28,6 +28,8 @@ export class UsuarioService {
   indiceActorSeleccionado;
   indicePeliculaSeleccionada;
   peliculaSelecionada;
+  peliculasSeleccionadas=[];
+
 
   aumentarContador(){
     this.contador=this.contador+1;
@@ -44,6 +46,10 @@ export class UsuarioService {
 
   setPeliculaSeleccionada(pelicula){
     this.peliculaSelecionada=pelicula;
+  }
+
+  agregarPeliculaSeleccionada(pelicula){
+    this.peliculasSeleccionadas.push(pelicula);
   }
 
   constructor() { }

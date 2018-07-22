@@ -5,34 +5,39 @@
         <img class="d-block w-100" src="https://martamoralescastillo.files.wordpress.com/2015/01/consejos-para-escoger-tu-foto-de-perfil-en-linkedin-redes-sociales-marca-personal-branding-marta-morales-blog-curiosidades-social-media.png?w=350&h=200&crop=1" alt="First slide">
       </div>
 
-      <div class="col-sm-9" style="margin-top: 20px; width: 100%" *ngFor="let info of pelicula; let indice = index">
+      <div class="col-sm-9" style="margin-top: 20px; width: 100%" >
         <div class="row"  style="margin-left: 20px">
           <div class="col-sm-1">
           </div>
           <div class="col-sm-2" style="margin-top: 20px; width: 100%">
-            <h5 class="card-title">{{info.peliculaId}}</h5>
-            <h5 class="card-title">{{info.nombre}}</h5>
+            <h5 class="card-title">{{pelicula.peliculaId}}</h5>
+            <h5 class="card-title">{{pelicula.nombre}}</h5>
           </div>
 
           <div class="col-sm-2" style="margin-top: 20px; width: 100%">
-            <h5 class="card-title">{{info.anioLanzamiento}}</h5>
-            <h5 class="card-title" *ngFor="let info2 of actor;">
-              {{info2.nombre}} {{info2.apellido}}
-              <!--{{info.actorId.nombre}}-->
+            <h5 class="card-title">{{pelicula.anioLanzamiento}}</h5>
+            <h5 class="card-title">
+              <!--{{info2.nombre}} {{info2.apellido}}-->
+              {{pelicula.actorId.nombre}} {{pelicula.actorId.apellido}}
               <!--{{actorNombre}}-->
             </h5>
+            <!--<h5 class="card-title" *ngFor="let info2 of actor;">-->
+              <!--{{info2.nombre}} {{info2.apellido}}-->
+              <!--&lt;!&ndash;{{pelicula.actorId.nombre}}&ndash;&gt;-->
+              <!--&lt;!&ndash;{{actorNombre}}&ndash;&gt;-->
+            <!--</h5>-->
           </div>
           <div class="col-sm-2" style="margin-top: 20px; width: 100%">
-            <h5 class="card-title">{{info.rating}}/5 Pts.</h5>
-            <h5 class="card-title">{{info.anioLanzamiento}}</h5>
+            <h5 class="card-title">{{pelicula.rating}}/5 Pts.</h5>
+            <h5 class="card-title">{{pelicula.anioLanzamiento}}</h5>
           </div>
           <div class="col-sm-2" style="margin-top: 20px; width: 100%">
-            <h5 class="card-title">{{info.genero}}</h5>
-            <h5 class="card-title">{{info.duracion}}</h5>
+            <h5 class="card-title">{{pelicula.genero}}</h5>
+            <h5 class="card-title">{{pelicula.duracion}}</h5>
           </div>
           <div class="col-sm-2" style="margin-top: 20px; width: 100%">
-            <h5 class="card-title">{{info.idioma}}</h5>
-            <h5 class="card-title">${{info.costo}}.00</h5>
+            <h5 class="card-title">{{pelicula.idioma}}</h5>
+            <h5 class="card-title">${{pelicula.costo}}.00</h5>
           </div>
         </div>
       </div>

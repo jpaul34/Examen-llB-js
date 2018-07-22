@@ -3,14 +3,20 @@
   <div class="col-sm-2">
   </div>
 
-  <div class="col-sm-8">
-    <app-pelicula-detalle></app-pelicula-detalle>
-    <div class="col-sm-12" >
-      <br>
-      <button type="button" class="btn btn-light" (click)="cambiarRuta()">Añadir al carrito</button>
-      <br><br>
-    </div>
+  <div class="col-sm-8" style="text-align: center;" >
+    <app-pelicula-detalle [pelicula]="mensaje"></app-pelicula-detalle>
+    <button type="button" class="btn btn-light" (click)="cambiarRuta()">Añadir al carrito</button>
   </div>
+
+  <!--<div class="col-sm-8">-->
+    <!---->
+    <!--<app-pelicula-detalle ></app-pelicula-detalle>-->
+    <!--<div class="col-sm-12" >-->
+      <!--<br>-->
+      <!--<button type="button" class="btn btn-light" (click)="cambiarRuta()">Añadir al carrito</button>-->
+      <!--<br><br>-->
+    <!--</div>-->
+  <!--</div>-->
 
   <div class="col-sm-2">
   </div>
