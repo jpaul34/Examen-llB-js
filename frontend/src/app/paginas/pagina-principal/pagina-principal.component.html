@@ -22,7 +22,7 @@
   <div class="col-sm-8">
     <div class="row">
       <div class="col-sm-4" style= "text-align: center;" *ngFor="let info of mensaje; let indice = index">
-        <app-actor-resumen [actor]="info" ></app-actor-resumen>
+        <app-actor-resumen [actor]="info" *ngIf="indice<numActores"></app-actor-resumen>
       </div>
     </div>
   </div>
@@ -33,7 +33,7 @@
 <div class="row" style="text-align: center">
   <div class="col-sm-12" >
     <br>
-    <button type="button" class="btn btn-light">Cargar más</button>
+    <button type="button" class="btn btn-light" *ngIf="contadorActores>numActores" (click)="aumentarNumActores()">Cargar más</button>
     <br><br>
   </div>
 </div>
@@ -55,7 +55,7 @@
 <div class="row" style="text-align: center">
   <div class="col-sm-12" >
     <br><br>
-    <button type="button" class="btn btn-light" (click)="aumentarNumPelis()">Cargar más</button>
+    <button type="button" class="btn btn-light" *ngIf="contadorPeliculas>numPeliculas" (click)="aumentarNumPelis()">Cargar más</button>
     <br><br><br>
   </div>
 </div>

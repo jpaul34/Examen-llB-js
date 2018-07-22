@@ -1,50 +1,35 @@
-
-<div class="row">
+<div class="row" *ngIf="!disponible">
   <div class="col-sm-2">
   </div>
-
-  <div class="col-sm-8" style="text-align: center;" >
-    <app-pelicula-detalle [pelicula]="mensaje"></app-pelicula-detalle>
-    <button type="button" class="btn btn-light" (click)="cambiarRuta()">Añadir al carrito</button>
+  <div class="col-sm-8" >
+    <div class="row">
+      <div class="col-sm-12" style="text-align: center;">
+        <app-pelicula-detalle [pelicula]="mensaje"></app-pelicula-detalle>
+      </div>
+    </div>
+    <div class="row">
+      <br>
+    </div>
+    <div class="row">
+      <div class="col-sm-12" style="text-align: left;">
+        <button type="button" class="btn btn-light" (click)="cambiarRuta()">Añadir al carrito</button>
+      </div>
+    </div>
   </div>
-
-  <!--<div class="col-sm-8">-->
-    <!---->
-    <!--<app-pelicula-detalle ></app-pelicula-detalle>-->
-    <!--<div class="col-sm-12" >-->
-      <!--<br>-->
-      <!--<button type="button" class="btn btn-light" (click)="cambiarRuta()">Añadir al carrito</button>-->
-      <!--<br><br>-->
-    <!--</div>-->
-  <!--</div>-->
-
   <div class="col-sm-2">
   </div>
-
-</div>
-
-<div class="row">
-  <br>
 </div>
 
 <div class="row">
   <div class="col-sm-2">
   </div>
-
   <div class="col-sm-8">
-    <app-pelicula-no-disponible></app-pelicula-no-disponible>
+    <app-pelicula-no-disponible *ngIf="disponible"></app-pelicula-no-disponible>
   </div>
-
   <div class="col-sm-2">
   </div>
+</div>
 
-</div>
-<div class="row">
-  <br>
-  <br>
-  <br>
-  <br>
-</div>
 <router-outlet></router-outlet>
 
 

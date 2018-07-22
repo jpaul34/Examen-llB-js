@@ -10,19 +10,33 @@ import {UsuarioService} from "../../servicios/usuario.service";
 export class Pagina2Component implements OnInit {
 
   mensaje;
+  disponible = false;
 
   constructor(private servicio:UsuarioService,
               private router:Router) { }
 
   ngOnInit() {
     this.mensaje=this.servicio.peliculaSelecionada;
+    this.mostrarContenido(this.mensaje);
   }
 
   cambiarRuta(){
-    // this.servicio.aumentarContador()
+    // this.servicio.aumentarContador(this.mensaje)
     this.servicio.emitirCambioCantidad();
     // console.log(this.servicio.peliculaSelecionada);
     this.servicio.agregarPeliculaSeleccionada(this.servicio.peliculaSelecionada);
     this.router.navigate(['/']);
   }
+
+  mostrarContenido(mensaje){
+    let id = mensaje.id;
+    let existe=false;
+    this.servicio.peliculasSeleccionadas.forEach(function(valor, index, arr){
+      if(valor.id===id){
+        existe=true;
+      }
+    });
+    this.disponible=existe;
+  }
+
 }

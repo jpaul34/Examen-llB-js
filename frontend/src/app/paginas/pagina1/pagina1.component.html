@@ -29,16 +29,11 @@
   </div>
 </div>
 
-<div class="row">
-  <br>
-  <br>
-</div>
-
 <div class="row" style="text-align: center">
   <div class="col-sm-12" >
+    <br>
+    <button type="button" class="btn btn-light" *ngIf="contadorPeliculas>numPeliculas" (click)="aumentarNumPelis()">Cargar más</button>
     <br><br>
-    <button type="button" class="btn btn-light" (click)="aumentarNumPelis()">Cargar más</button>
-    <br><br><br>
   </div>
 </div>
 
