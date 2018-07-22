@@ -8,16 +8,39 @@ import {UsuarioService} from "../../servicios/usuario.service";
 })
 export class Pagina3Component implements OnInit {
 
-  mensaje;
+  mensaje
+  // total=0;
+  cantidad;
 
-  constructor(private servicio:UsuarioService) { }
+  constructor(private servicio:UsuarioService) {
+    // this.cantidad=this.servicio.contador;
+  }
 
   ngOnInit() {
     this.mensaje=this.servicio.peliculasSeleccionadas;
+    console.log('el mensaje es: ',this.mensaje);
+    // this.servicio.emitircambioPeliculas.subscribe(mensaje=>this.mensaje=mensaje);
+    // this.servicio.emitircambioCantidad.subscribe(cantidad => this.cantidad = cantidad)
   }
 
-  imprimir(){
-    console.log('peliculas seleccionadas ',this.servicio.peliculasSeleccionadas);
+  calcularTotal(){
+    let total = 0;
+    if (Object.entries(this.mensaje).length !== 0){
+      this.mensaje.forEach((valor) => {
+          total = total + Number(valor.costo);
+        }
+      );
+    }
+    return total;
+  }
+
+  eliminarPelicula(id){
+    console.log('ID: ', id);
+    console.log(this.mensaje);
+    this.servicio.emitirEliminar();
+    // this.servicio.emitirCambioPeliculas();
+    this.mensaje=this.servicio.peliculasSeleccionadas;
+    this.servicio.eliminarPelicula(id);
   }
 
 }

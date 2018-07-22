@@ -1,1 +1,53 @@
-<div>Falta Editar</div>
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#myModal">Editar Datos de Facturación</button>
+<!-- Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title" style="text-align: center;">Datos Facturación</h5>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10" style=" margin-top: 20px; width: 100%">
+            <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="nombre"
+                   name="nombre">
+            <!--[(ngModel)]="nombre" #nombreFormulario="ngModel" >-->
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10" style=" margin-top: 20px; width: 100%">
+            <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" aria-describedby="apellido"
+                   name="apellido">
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10" style=" margin-top: 20px; width: 100%">
+            <input type="text" class="form-control" placeholder="Correo" aria-label="Correo" aria-describedby="correo"
+                   name="correo">
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="guardar()">Guardar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+      </div>
+
+    </div>
+  </div>
+</div>

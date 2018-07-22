@@ -11,5 +11,7 @@ export class DatosFacturaComponent implements OnInit {
 
   ngOnInit() {
   }
+  guardar(){
 
+  }
 }
