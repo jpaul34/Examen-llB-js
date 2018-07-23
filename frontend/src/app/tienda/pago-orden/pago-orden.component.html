@@ -1,0 +1,81 @@
+<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal2">Completar la orden</button>
+<!-- Modal -->
+<div class="modal fade" id="myModal2">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h4 class="modal-title" style="text-align: center;">Orden de pago</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+
+        <div class="creditCardForm">
+          <div class="heading">
+            <h5>Confirmar compra</h5>
+            <br>
+          </div>
+          <div class="payment">
+            <div class="row ">
+              <div class="col-sm-1"></div>
+              <div class="col-sm-10">
+                <form name="formularioCC" action="#" class="credit-card-div">
+                  <div class="panel panel-default" >
+                    <div class="panel-heading">
+
+                      <div class="row ">
+                        <div class="col-md-12 pad-adjust">
+                          <input name='nombreCC' type="text" class="form-control" placeholder="Nombre y Apellido" required
+                                 [(ngModel)]="nombreCC" #nombreFormulario="ngModel"/>
+
+                        </div>
+                      </div>
+                      <br>
+                      <div class="row ">
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" placeholder="Card Number"
+                                 name='numeroCC' [(ngModel)]="numeroCC" #numeroCCFormulario="ngModel"/>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="row ">
+                        <div class="col-sm-3">
+                          <input type="text" class="form-control" placeholder="MM" style="text-align: center;" required
+                                 name='mesCC' [(ngModel)]="mesCC" #mesCCFormulario="ngModel"/>
+                        </div>
+                        <div class="col-sm-3">
+                          <input type="text" class="form-control" placeholder="AA" style="text-align: center;" required
+                                 name='anioCC' [(ngModel)]="anioCC" #anioCCFormulario="ngModel"/>
+                        </div>
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-3">
+                          <input type="text" class="form-control" placeholder="CCV" style="text-align: center;" required
+                                 name='csvCC' [(ngModel)]="csvCC" #csvCCFormulario="ngModel"/>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="col-sm-1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button"
+                class="btn btn-primary" [disabled]="!nombreFormulario.valid || !numeroCCFormulario.valid
+                || !mesCCFormulario.valid || !anioCCFormulario.valid || !csvCCFormulario.valid"
+                data-dismiss="modal"
+                (click)="pagar()">Pagar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UsuarioService} from "../../servicios/usuario.service";
+import {CookieService} from "ngx-cookie-service";
 
 @Component({
   selector: 'app-datos-factura',
@@ -10,7 +11,7 @@ export class DatosFacturaComponent implements OnInit {
 
   datosFactura;
 
-  constructor(private servicio: UsuarioService) { }
+  constructor(private cookieService: CookieService, private servicio: UsuarioService) { }
 
   ngOnInit() {
     this.datosFactura=this.servicio.datosFactura;

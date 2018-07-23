@@ -107,4 +107,10 @@ export class UsuarioService {
     this.urlnuevaHijos=urlnuevahijos;
   }
 
+  vaciarParametros(){
+    this.contador=0;
+    this.emitircambioCantidad.emit(this.contador);
+    this.datosFactura=[];
+    this.peliculasSeleccionadas=[];
+  }
 }

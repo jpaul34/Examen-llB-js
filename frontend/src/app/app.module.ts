@@ -24,6 +24,7 @@ import { Pagina1Component } from './paginas/pagina1/pagina1.component';
 import { Pagina2Component } from './paginas/pagina2/pagina2.component';
 import { Pagina3Component } from './paginas/pagina3/pagina3.component';
 import { PaginaPrincipalComponent } from './paginas/pagina-principal/pagina-principal.component';
+import { PagoOrdenComponent } from './tienda/pago-orden/pago-orden.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { PaginaPrincipalComponent } from './paginas/pagina-principal/pagina-prin
     Pagina1Component,
     Pagina2Component,
     Pagina3Component,
-    PaginaPrincipalComponent
+    PaginaPrincipalComponent,
+    PagoOrdenComponent
   ],
   imports: [
     BrowserModule,
