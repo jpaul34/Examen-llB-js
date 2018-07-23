@@ -29,6 +29,7 @@ export class UsuarioService {
   indicePeliculaSeleccionada;
   peliculaSelecionada;
   peliculasSeleccionadas=[];
+  datosFactura;
 
 
   aumentarContador(){
@@ -53,6 +54,10 @@ export class UsuarioService {
 
   agregarPeliculaSeleccionada(pelicula){
     this.peliculasSeleccionadas.push(pelicula);
+  }
+
+  setDatosFactura(datos){
+    this.datosFactura=datos;
   }
 
   eliminarPelicula(id){

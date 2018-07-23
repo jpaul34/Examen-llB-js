@@ -17,8 +17,7 @@
           <div class="col-sm-1"></div>
           <div class="col-sm-10" style=" margin-top: 20px; width: 100%">
             <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="nombre"
-                   name="nombre">
-            <!--[(ngModel)]="nombre" #nombreFormulario="ngModel" >-->
+                   name="nombre" [(ngModel)]="datosFactura.nombre" #nombreFormulario="ngModel" >
           </div>
           <div class="col-sm-1"></div>
         </div>
@@ -27,7 +26,7 @@
           <div class="col-sm-1"></div>
           <div class="col-sm-10" style=" margin-top: 20px; width: 100%">
             <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" aria-describedby="apellido"
-                   name="apellido">
+                   name="apellido" [(ngModel)]="datosFactura.apellido" #nombreFormulario="ngModel" >
           </div>
           <div class="col-sm-1"></div>
         </div>
@@ -36,7 +35,7 @@
           <div class="col-sm-1"></div>
           <div class="col-sm-10" style=" margin-top: 20px; width: 100%">
             <input type="text" class="form-control" placeholder="Correo" aria-label="Correo" aria-describedby="correo"
-                   name="correo">
+                   name="correo" [(ngModel)]="datosFactura.correo" #nombreFormulario="ngModel" >
           </div>
           <div class="col-sm-1"></div>
         </div>
@@ -44,7 +43,7 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" (click)="guardar()">Guardar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="guardar()">Guardar</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
       </div>
 

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {CookieService} from "ngx-cookie-service";
+import {UsuarioService} from "../../servicios/usuario.service";
 
 @Component({
   selector: 'app-tienda-factura',
@@ -7,19 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TiendaFacturaComponent implements OnInit {
 
-  constructor() { }
+  usuario;
+  datosFactura;
+
+  constructor(private cookieService: CookieService, private servicio: UsuarioService) { }
 
   ngOnInit() {
+    this.usuario=this.cookieService.getAll();
+    this.servicio.setDatosFactura(this.cookieService.getAll());
+    this.datosFactura=this.servicio.datosFactura;
   }
-
-  usuario = [
-    {
-      nombre: "Jonathan",
-      apellido: "Caiza",
-      correo: "jonathan.caiza@epn.edu.ec",
-      usuario: "usuario1"
-    }
-  ];
 
 
 }

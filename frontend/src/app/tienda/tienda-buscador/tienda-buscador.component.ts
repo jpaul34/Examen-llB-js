@@ -11,14 +11,11 @@ import {Actor, Pelicula} from "../../home/home/home.component";
 })
 export class TiendaBuscadorComponent implements OnInit {
 
-  mostrar=false;
-  marca;
   nombre;
   actor;
   pelicula;
   urlActor='http://localhost:1337/actor?nombre=';
   urlPelicula='http://localhost:1337/pelicula?nombre=';
-  seleccionPeli;
   nuevaUrlActor:string;
   nuevaUrlPelicula:string;
 
@@ -30,17 +27,6 @@ export class TiendaBuscadorComponent implements OnInit {
     // this.escucharCambioBusqueda();
   }
 
-  //
-  // escucharCambioBusqueda() {
-  //   // this.servicio.emitircambioBusqueda.subscribe((autos) => {this.nuevaUrl= autos;})
-  // }
-
-
-  // buscar() {
-  //   console.log('Nombresssss: ',this.nombreActor);
-  //   this.nuevaUrl=this.urlActor+this.nombreActor;
-  //   return this.http.get<Actor>(this.nuevaUrl);
-  // }
   id;
 
   // @Output() ngModelChange = new EventEmitter();

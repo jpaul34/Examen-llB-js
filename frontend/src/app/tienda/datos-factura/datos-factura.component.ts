@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {UsuarioService} from "../../servicios/usuario.service";
 
 @Component({
   selector: 'app-datos-factura',
@@ -7,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatosFacturaComponent implements OnInit {
 
-  constructor() { }
+  datosFactura;
+
+  constructor(private servicio: UsuarioService) { }
 
   ngOnInit() {
+    this.datosFactura=this.servicio.datosFactura;
   }
-  guardar(){
 
+  guardar(){
+    this.servicio.setDatosFactura(this.datosFactura);
   }
 }
