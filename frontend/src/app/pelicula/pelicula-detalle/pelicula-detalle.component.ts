@@ -1,7 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Actor, Pelicula} from "../../home/home/home.component";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs/index";
 import {UsuarioService} from "../../servicios/usuario.service";
 
 @Component({
@@ -14,11 +12,8 @@ export class PeliculaDetalleComponent implements OnInit {
   @Input() pelicula;
   actor;
 
-  constructor(private http: HttpClient, private servicio: UsuarioService) {
+  constructor(private http: HttpClient, private servicio: UsuarioService) { }
 
-  }
-
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

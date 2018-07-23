@@ -1,7 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {UsuarioService} from "../../servicios/usuario.service";
-import {Actor} from "../../home/home/home.component";
 
 @Component({
   selector: 'app-actor-detalle',

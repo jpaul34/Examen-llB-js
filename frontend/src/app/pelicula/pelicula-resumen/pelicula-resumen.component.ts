@@ -1,7 +1,4 @@
 import {Component, Input, OnInit, Output} from '@angular/core';
-import {Actor, Pelicula} from "../../home/home/home.component";
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs/index";
 import {UsuarioService} from "../../servicios/usuario.service";
 import {Router} from "@angular/router";
 

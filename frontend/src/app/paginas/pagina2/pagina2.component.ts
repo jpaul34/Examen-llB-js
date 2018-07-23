@@ -21,9 +21,7 @@ export class Pagina2Component implements OnInit {
   }
 
   cambiarRuta(){
-    // this.servicio.aumentarContador(this.mensaje)
     this.servicio.emitirCambioCantidad();
-    // console.log(this.servicio.peliculaSelecionada);
     this.servicio.agregarPeliculaSeleccionada(this.servicio.peliculaSelecionada);
     this.router.navigate(['/']);
   }
@@ -31,7 +29,7 @@ export class Pagina2Component implements OnInit {
   mostrarContenido(mensaje){
     let id = mensaje.id;
     let existe=false;
-    this.servicio.peliculasSeleccionadas.forEach(function(valor, index, arr){
+    this.servicio.peliculasSeleccionadas.forEach(function(valor){
       if(valor.id===id){
         existe=true;
       }

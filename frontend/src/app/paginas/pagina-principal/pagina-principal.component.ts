@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {UsuarioService} from "../../servicios/usuario.service";
-import {CookieService} from "ngx-cookie-service";
 import {Pelicula} from "../../home/home/home.component";
 
 @Component({

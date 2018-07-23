@@ -11,29 +11,11 @@ import {CookieService} from "ngx-cookie-service";
 })
 
 export class HomeComponent implements OnInit {
-  //
-  // config: Actor;
-  // contador=this._usuarioService.contador;
   user;
-  //
-  constructor(
-     // private http: HttpClient, private _usuarioService:UsuarioService, private cookieService: CookieService
-  ) {
-  }
-  //
-  ngOnInit() {
-    // this.escucharCambiosPelicula();
-    // this.user=this.cookieService.get('user');
-    // this.user=this.cookieService.get('user');
 
-  }
-  //
-  // escucharCambiosPelicula() {
-  //   this._usuarioService.emitircambioAuto.subscribe((pelicula) => {this.contador= pelicula;
-  //     console.log(this.contador)
-  //   });
-  //
-  // }
+  constructor() { }
+
+  ngOnInit() { }
 
 }
 

@@ -8,19 +8,12 @@ import {UsuarioService} from "../../servicios/usuario.service";
 })
 export class Pagina3Component implements OnInit {
 
-  mensaje
-  // total=0;
-  cantidad;
+  mensaje;
 
-  constructor(private servicio:UsuarioService) {
-    // this.cantidad=this.servicio.contador;
-  }
+  constructor(private servicio:UsuarioService) {  }
 
   ngOnInit() {
     this.mensaje=this.servicio.peliculasSeleccionadas;
-    console.log('el mensaje es: ',this.mensaje);
-    // this.servicio.emitircambioPeliculas.subscribe(mensaje=>this.mensaje=mensaje);
-    // this.servicio.emitircambioCantidad.subscribe(cantidad => this.cantidad = cantidad)
   }
 
   calcularTotal(){
@@ -35,10 +28,7 @@ export class Pagina3Component implements OnInit {
   }
 
   eliminarPelicula(id){
-    console.log('ID: ', id);
-    console.log(this.mensaje);
     this.servicio.emitirEliminar();
-    // this.servicio.emitirCambioPeliculas();
     this.mensaje=this.servicio.peliculasSeleccionadas;
     this.servicio.eliminarPelicula(id);
   }

@@ -20,7 +20,6 @@ export class TiendaCarritoComponent implements OnInit {
     this.servicio.emitircambioCantidad.subscribe(cantidad => this.cantidad = cantidad)
   }
   cambiarRuta(){
-    console.log('Cambio cantidad  ', this.cantidad)
     this.router.navigate(['/carrito']);
   }
 
